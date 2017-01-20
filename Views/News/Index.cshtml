@@ -1,0 +1,16 @@
+@model CitySite.Models.CityNewsViewModel
+@{
+    ViewData["Title"] = $"The Latest News From {Model.Name}";
+}
+
+<h1>The Latest News From @Model.Name</h1>
+<p>@Model.Description</p>
+<h3>Today's Headlines</h3>
+@if (Model.Headlines?.Count > 0) {
+    <ul>
+    @foreach (var headline in Model.Headlines)
+    {
+        <li>@headline</li>
+    }
+    </ul>
+}
